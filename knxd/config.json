@@ -1,0 +1,29 @@
+{
+  "name": "KNXD daemon",
+  "version": "0.2.11",
+  "slug": "knxd",
+  "description": "KNXD daemon you can use to create a KNX/IP gateway via TPUART or USB bus adapters",
+  "startup": "before",
+  "boot": "auto",
+  "arch": ["armhf"],
+  "options": {
+    "address": "0.0.1",
+    "client_address": "0.0.1:10",
+    "interface": "tpuart",
+    "device": "/dev/ttyACM0",
+    "custom_config": ""
+  },
+  "schema": {
+    "interface": "str",
+    "address": "str",
+    "client_address": "str?",
+    "device": "str",
+    "custom_config": "str?"
+  },
+  "ports": {
+    "6720/tcp": 6720,
+    "3671/udp": 3671
+  },
+  "devices": ["/dev/ttyACM0:/dev/ttyACM0:rwm"],
+  "auto_uart": true
+}
