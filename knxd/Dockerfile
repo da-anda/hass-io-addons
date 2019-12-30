@@ -22,6 +22,7 @@ RUN set -xe \
                 cmake \
                 dev86 \
      && apk add --no-cache \
+                udev \
                 libusb \
                 libev \
      && git clone -b stable https://github.com/knxd/knxd.git \
