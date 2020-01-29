@@ -8,6 +8,13 @@ DEVICE=$(jq --raw-output ".device" $CONFIG_PATH)
 ADDRESS=$(jq --raw-output ".address" $CONFIG_PATH)
 CLIENT_ADDRESS=$(jq --raw-output ".client_address" $CONFIG_PATH)
 CUSTOM=$(jq --raw-output ".custom_config" $CONFIG_PATH)
+USB_FILTERS=$(jq --raw-output ".usb_filters" $CONFIG_PATH)
+IF_SECTION=""
+
+USB_IF="
+send-timeout = 3000
+filters = $USB_FILTERS
+"
 
 KNX_INI="
 [main]
@@ -29,7 +36,12 @@ name = knxd
 [interface]
 driver = $INTERFACE
 device = $DEVICE
-"
+$IF_SECTION"
+
+if [ ${INTERFACE} = "usb" ]
+then
+    IF_SECTION="$USB_IF"
+fi
 
 if [ ${#CUSTOM} -ge 5 ]
 then
