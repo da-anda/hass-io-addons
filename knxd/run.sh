@@ -16,6 +16,11 @@ send-timeout = 3000
 filters = $USB_FILTERS
 "
 
+if [ ${INTERFACE} = "usb" ]
+then
+    IF_SECTION="$USB_IF"
+fi
+
 KNX_INI="
 [main]
 addr = $ADDRESS
@@ -37,11 +42,6 @@ name = knxd
 driver = $INTERFACE
 device = $DEVICE
 $IF_SECTION"
-
-if [ ${INTERFACE} = "usb" ]
-then
-    IF_SECTION="$USB_IF"
-fi
 
 if [ ${#CUSTOM} -ge 5 ]
 then
