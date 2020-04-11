@@ -25,7 +25,7 @@ RUN set -xe \
                 udev \
                 libusb \
                 libev \
-     && git clone -b stable https://github.com/knxd/knxd.git \
+     && git clone -b deb https://github.com/knxd/knxd.git \
      && cd knxd \
      && ./bootstrap.sh \
      && ./configure --disable-systemd --enable-tpuart --enable-usb --enable-eibnetipserver --enable-eibnetip --enable-eibnetserver --enable-eibnetiptunnel \
