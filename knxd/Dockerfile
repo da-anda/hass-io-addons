@@ -28,6 +28,8 @@ RUN set -xe \
                 libev \
      && git clone -b "${KNXD_BRANCH}" --depth 1 https://github.com/knxd/knxd.git \
      && cd knxd \
+     && mkdir -p debian \
+     && touch debian/changelog \
      && ./bootstrap.sh \
      && ./configure --disable-systemd --enable-tpuart --enable-usb --enable-eibnetipserver --enable-eibnetip --enable-eibnetserver --enable-eibnetiptunnel \
      && mkdir -p src/include/sys && ln -s /usr/lib/bcc/include/sys/cdefs.h src/include/sys \
