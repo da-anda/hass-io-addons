@@ -11,14 +11,11 @@ CUSTOM=$(jq --raw-output ".custom_config" $CONFIG_PATH)
 USB_FILTERS=$(jq --raw-output ".usb_filters" $CONFIG_PATH)
 IF_SECTION=""
 
-USB_IF="
-send-timeout = 3000
-filters = $USB_FILTERS
-"
-
 if [ ${INTERFACE} = "usb" ]
 then
-    IF_SECTION="$USB_IF"
+    IF_SECTION="
+send-timeout = 3000
+filters = $USB_FILTERS"
 fi
 
 KNX_INI="

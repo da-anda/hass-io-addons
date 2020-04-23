@@ -2,12 +2,10 @@ ARG BUILD_FROM
 FROM ${BUILD_FROM}
 
 ENV LANG C.UTF-8
-
-ARG KNXD_BRANCH
+ARG KNXD_VERSION
 RUN set -xe \
     && apk update \
     && apk add --no-cache --virtual .build-dependencies \
-                jq \
                 build-base \
                 gcc \
                 git \
@@ -26,7 +24,7 @@ RUN set -xe \
                 udev \
                 libusb \
                 libev \
-     && git clone -b "${KNXD_BRANCH}" --depth 1 https://github.com/knxd/knxd.git \
+     && git clone --branch "${KNXD_VERSION}" --depth 1 https://github.com/knxd/knxd.git \
      && cd knxd \
      && ./bootstrap.sh \
      && ./configure --disable-systemd --enable-tpuart --enable-usb --enable-eibnetipserver --enable-eibnetip --enable-eibnetserver --enable-eibnetiptunnel \
@@ -35,16 +33,9 @@ RUN set -xe \
      && make install \
      && apk del --purge .build-dependencies
 
-# EXPOSE 3672 6720
-
-# VOLUME /etc/knxd
-#COPY docker-healthcheck /home/docker-healthcheck
-#RUN chmod +x /home/docker-healthcheck
-#CMD ["knxd","/etc/knxd/knxd.ini"]
-
-
 # Copy data for add-on
 COPY run.sh /
 RUN chmod a+x /run.sh
+RUN dos2unix /run.sh
 
 CMD [ "/run.sh" ]
