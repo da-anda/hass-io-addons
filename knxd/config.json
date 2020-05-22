@@ -1,6 +1,6 @@
 {
   "name": "KNXD daemon",
-  "version": "0.3.4",
+  "version": "0.3.5",
   "slug": "knxd",
   "description": "KNXD daemon you can use to create a KNX/IP gateway via TPUART or USB bus adapters",
   "startup": "services",
@@ -13,7 +13,6 @@
   ],
   "boot": "auto",
   "hassio_api": false,
-  "hassio_role": "default",
   "host_network": true,
   "privileged": [
     "SYS_MODULE",
