@@ -31,6 +31,9 @@ RUN set -xe \
      && mkdir -p src/include/sys && ln -s /usr/lib/bcc/include/sys/cdefs.h src/include/sys \
      && make \
      && make install \
+     && make clean \
+     && cd .. \
+     && rm -rf knxd \
      && apk del --purge .build-dependencies
 
 # Copy data for add-on
