@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.6
+
+- bumped knxd version to 0.14.39 which fixes some delays with pace filters
+
 ## 0.3.5
 
 - bumped knxd version to 0.14.37 which fixes a memory leak in the FT12 driver
