@@ -24,6 +24,8 @@ RUN set -xe \
                 udev \
                 libusb \
                 libev \
+				libgcc \
+				libstdc++ \
      && git clone --branch "${KNXD_VERSION}" --depth 1 https://github.com/knxd/knxd.git \
      && cd knxd \
      && ./bootstrap.sh \
@@ -36,9 +38,5 @@ RUN set -xe \
      && rm -rf knxd \
      && apk del --purge .build-dependencies
 
-# Copy data for add-on
-COPY run.sh /
-RUN chmod a+x /run.sh
-RUN dos2unix /run.sh
-
-CMD [ "/run.sh" ]
+# add local files
+COPY rootfs/ /

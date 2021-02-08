@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.3.7
+
+- switched to new hass-io base containers based on GitHub Docker Repository
+- removed run.sh and replaced it with according s6-overlay scripts
+
 ## 0.3.6
 
 - bumped knxd version to 0.14.39 which fixes some delays with pace filters
