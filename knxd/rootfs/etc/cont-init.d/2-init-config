@@ -1,49 +1,34 @@
-#!/usr/bin/with-contenv bash
+#!/usr/bin/with-contenv bashio
 
-set -e
+readonly CONF="/etc/knxd.ini"
 
-CONFIG_PATH=/data/options.json
+# =======================================
+# custom configuration
+# =======================================
 
-INTERFACE=$(jq --raw-output ".interface" $CONFIG_PATH)
-DEVICE=$(jq --raw-output ".device" $CONFIG_PATH)
-ADDRESS=$(jq --raw-output ".address" $CONFIG_PATH)
-CLIENT_ADDRESS=$(jq --raw-output ".client_address" $CONFIG_PATH)
-CUSTOM=$(jq --raw-output ".custom_config" $CONFIG_PATH)
-USB_FILTERS=$(jq --raw-output ".usb_filters" $CONFIG_PATH)
-IF_SECTION=""
+# first check if a custom config is specified and use that
+if bashio::config.has_value 'custom_config' && bashio::config 'custom_config' -ge 5; then
+  echo $(bashio::config 'custom_config') > ${CONF}
+fi;
 
-if [ ${INTERFACE} = "usb" ]
-then
-    IF_SECTION="
-send-timeout = 3000
-filters = $USB_FILTERS"
+# =======================================
+# auto configuration
+# =======================================
+
+# check if an interface is defined
+if ! bashio::config.has_value 'interface'; then
+	bashio:exit.nok "An interface type needs to be configured"
+fi
+	
+# check if a device is selected, which is mandatory for anything but USB
+if bashio::config.equals 'interface' 'usb' && ! bashio::config.has_value 'device'; then
+	bashio:exit.nok "A device needs to be configured"
 fi
 
-KNX_INI="
-[main]
-addr = $ADDRESS
-client-addrs = $CLIENT_ADDRESS
-connections = server,A.tcp,interface
-logfile = /dev/stdout
-
-[A.tcp]
-server = knxd_tcp
-
-[server]
-server = ets_router
-tunnel = tunnel
-router = router
-discover = true
-name = knxd
-
-[interface]
-driver = $INTERFACE
-device = $DEVICE
-$IF_SECTION"
-
-if [ ${#CUSTOM} -ge 5 ]
-then
-    echo "$CUSTOM" >> /etc/knxd.ini
-else
-    echo "$KNX_INI" >> /etc/knxd.ini
-fi
+# read the config template, replace placeholders and write it back
+sed -i "s|%%INTERFACE%%|$(bashio::config 'interface')|g" "${CONF}"
+sed -i "s|%%DEVICE%%|$(bashio::config 'device')|g" "${CONF}"
+sed -i "s|%%ADDRESS%%|$(bashio::config 'address')|g" "${CONF}"
+sed -i "s|%%CLIENT_ADDRESS%%|$(bashio::config 'client_address')|g" "${CONF}"
+sed -i "s|%%FILTERS%%|$(bashio::config 'usb_filters')|g" "${CONF}"
+sed -i "s|%%DEBUG_ERROR_LEVEL%%|$(bashio::config 'log_error_level')|g" "${CONF}"

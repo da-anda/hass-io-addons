@@ -12,7 +12,6 @@
     "i386"
   ],
   "boot": "auto",
-  "hassio_api": false,
   "host_network": true,
   "privileged": [
     "SYS_MODULE",
@@ -27,14 +26,16 @@
     "client_address": "0.0.2:8",
     "interface": "tpuart",
     "device": "/dev/ttyACM0",
+    "log_error_level": "warning",
     "usb_filters": "",
     "custom_config": ""
   },
   "schema": {
-    "interface": "list(tpuart|usb|ft12|ft12cemi|ncn5120|ip|ipt|iptn)",
+    "interface": "list(tpuart|usb|ft12|ft12cemi|ncn5120|dummy)",
     "address": "str",
     "client_address": "str?",
-    "device": "str",
+    "device": "device?",
+    "log_error_level": "list(warning|error|fatal|note|info|debug)",
     "usb_filters": "str?",
     "custom_config": "str?"
   },
