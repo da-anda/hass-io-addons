@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.4
+- using new approach on how the KNXD config is generated
+- added device selector to the add-on configuration options
+- added possibility to configure the error log level to be able to debug issues more easily
+- switched add-on base image back to Alpine 3.12 since the new 3.13 seems to have severe issues with USB interfaces
+
 ## 0.3.7
 
 - switched to new hass-io base containers based on GitHub Docker Repository

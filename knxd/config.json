@@ -1,6 +1,6 @@
 {
   "name": "KNXD daemon",
-  "version": "0.3.7",
+  "version": "0.4.0",
   "slug": "knxd",
   "description": "KNXD daemon you can use to create a KNX/IP gateway via TPUART or USB bus adapters",
   "startup": "services",
@@ -16,10 +16,6 @@
   "privileged": [
     "SYS_MODULE",
     "SYS_RAWIO"
-  ],
-  "devices": [
-    "/dev/bus/usb",
-    "/dev/mem"
   ],
   "options": {
     "address": "0.0.1",
@@ -48,5 +44,6 @@
       "3671/tcp": "Required by knx interface and being able to access the KNX bus via ETS"
   },
   "uart": true,
+  "usb": true,
   "hassio_role": "admin"
 }
