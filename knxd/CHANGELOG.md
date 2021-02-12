@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.4.1
+- correctly map USB hardware device paths to the expected integer values in knxd configuration
+
 ## 0.4
 - using new approach on how the KNXD config is generated
 - added device selector to the add-on configuration options
