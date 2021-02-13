@@ -36,7 +36,7 @@ declare USB_DEVICE='';
 declare USB_BUS='';
 declare device=$(bashio::config 'device')
 
-if $(bashio::config.equals 'interface' 'usb') && $(bashio::string.substring "${device}" 0 13) == "/dev/bus/usb/"; then
+if $(bashio::config.equals 'interface' 'usb') && [ $(bashio::string.substring "${device}" 0 13) == "/dev/bus/usb/" ]; then
 	USB_BUS=$(echo "${device}" | cut -d / -f 5 | sed 's/^0*//g')
 	USB_DEVICE=$(echo "${device}" | cut -d / -f 6 | sed 's/^0*//g')
 fi
