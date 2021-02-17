@@ -49,7 +49,7 @@ sed -i "s|%%CLIENT_ADDRESS%%|$(bashio::config 'client_address')|g" "${CONF}"
 sed -i "s|%%FILTERS%%|$(bashio::config 'usb_filters')|g" "${CONF}"
 sed -i "s|%%DEBUG_ERROR_LEVEL%%|$(bashio::config 'log_error_level')|g" "${CONF}"
 sed -i "s|%%USB_DEVICE%%|${USB_DEVICE}|g" "${CONF}"
-sed -i "s|%%USB_BUS%%|${USB_DEVICE}|g" "${CONF}"
+sed -i "s|%%USB_BUS%%|${USB_BUS}|g" "${CONF}"
 
 
 # =======================================
