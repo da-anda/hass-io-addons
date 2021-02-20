@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.4
+
+- added new experimental interfaces for tpuart-ip and ncn5120-ip
+
 ## 0.4.3
 
 - update addon based on home assistant template structure
