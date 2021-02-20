@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.4.2
+- fixed line breaks not being preserved in the resulting config file when using a custom_config
+
 ## 0.4.1
 - correctly map USB hardware device paths to the expected integer values in knxd configuration
 
