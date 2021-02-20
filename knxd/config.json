@@ -24,15 +24,19 @@
     "device": "",
     "log_error_level": "warning",
     "usb_filters": "single",
+    "ip_address": "",
+    "dest_port": "",
     "custom_config": ""
   },
   "schema": {
-    "interface": "list(tpuart|usb|ft12|ft12cemi|ncn5120|dummy)",
+    "interface": "list(tpuart|tpuart-ip|usb|ft12|ft12cemi|ncn5120|ncn5120-ip|dummy)",
     "address": "str",
     "client_address": "str?",
     "device": "device?",
     "log_error_level": "list(warning|error|fatal|note|info|debug)",
     "usb_filters": "str?",
+    "ip_address": "str?",
+    "dest_port": "str?",
     "custom_config": "str?"
   },
   "ports": {
