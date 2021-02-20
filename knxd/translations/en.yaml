@@ -29,3 +29,9 @@ configuration:
   log_error_level:
     name: KNXD Loglevel
     description: Define the loglevel of knxd.
+  ip_address:
+    name: Interface IP-Address
+    description: IP address the IP based interface should use (only for tpuart-ip and ncn5120-ip)
+  dest_port:
+    name: Interface port
+    description: network port the IP based interface should use (only for tpuart-ip and ncn5120-ip)
