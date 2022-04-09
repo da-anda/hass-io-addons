@@ -7,9 +7,11 @@
 ![Supports i386 Architecture][i386-shield]
 
 ## About
-`knxd` is a linux tool that can be used as router/gateway to talk to devices on a KNX bus. This add-on is providing the `knxd` daemon which you can use to create a KNX/IP gateway utilising TPUART or USB bus adapters from your home installation. So basically it can turn UART/USB interfaces into KNX IP-interfaces which you then can use in HomeAssistant or to program your KNX devices via ETS over ethernet. For more details see https://github.com/knxd/knxd. 
+
+`knxd` is a linux tool that can be used as router/gateway to talk to devices on a KNX bus. This add-on is providing the `knxd` daemon which you can use to create a KNX/IP gateway utilising TPUART or USB bus adapters from your home installation. So basically it can turn UART/USB interfaces into KNX IP-interfaces which you then can use in HomeAssistant or to program your KNX devices via ETS over ethernet. For more details see https://github.com/knxd/knxd.
 
 ## Installation and Configuration
+
 See [documentation](DOCS.md)
 
 [aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
