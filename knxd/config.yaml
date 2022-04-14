@@ -24,7 +24,7 @@ options:
   log_error_level: warning
   usb_filters: single
   ip_address: ""
-  dest_port: ""
+  dest_port: "99"
   custom_config: ""
 schema:
   address: "match(^\\d+\\.\\d+.\\d+$)"
