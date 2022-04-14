@@ -1,12 +1,24 @@
 # Changelog
 
+## 0.4.3
+
+- update addon based on home assistant template structure
+- removed "hassio_role": "admin"
+- bumped KNXD to 0.14.53
+- bumped base images to 3.14
+- add validators for address and client_address:
+- add english descriptions for all parameters
+
 ## 0.4.2
+
 - fixed line breaks not being preserved in the resulting config file when using a custom_config
 
 ## 0.4.1
+
 - correctly map USB hardware device paths to the expected integer values in knxd configuration
 
 ## 0.4
+
 - using new approach on how the KNXD config is generated
 - added device selector to the add-on configuration options
 - added possibility to configure the error log level to be able to debug issues more easily

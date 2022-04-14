@@ -28,7 +28,7 @@ RUN set -xe \
 				libstdc++ \
      && git clone --branch "${KNXD_VERSION}" --depth 1 https://github.com/knxd/knxd.git \
      && cd knxd \
-     && ./bootstrap.sh \
+     && ash ./bootstrap.sh \
      && ./configure --disable-systemd --enable-tpuart --enable-usb --enable-eibnetipserver --enable-eibnetip --enable-eibnetserver --enable-eibnetiptunnel \
      && mkdir -p src/include/sys && ln -s /usr/lib/bcc/include/sys/cdefs.h src/include/sys \
      && make \
