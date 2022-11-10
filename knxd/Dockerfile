@@ -3,6 +3,7 @@ FROM ${BUILD_FROM}
 
 ENV LANG C.UTF-8
 ARG KNXD_VERSION
+ARG KNXD_REPO
 RUN set -xe \
     && apk update \
     && apk add --no-cache --virtual .build-dependencies \
@@ -26,7 +27,7 @@ RUN set -xe \
                 libev \
 				libgcc \
 				libstdc++ \
-     && git clone --branch "${KNXD_VERSION}" --depth 1 https://github.com/knxd/knxd.git \
+     && git clone --branch "${KNXD_VERSION}" --depth 1 "${KNXD_REPO}" \
      && cd knxd \
      && ash ./bootstrap.sh \
      && ./configure --disable-systemd --enable-tpuart --enable-usb --enable-eibnetipserver --enable-eibnetip --enable-eibnetserver --enable-eibnetiptunnel \
