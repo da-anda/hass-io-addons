@@ -1,6 +1,6 @@
 # https://developers.home-assistant.io/docs/add-ons/configuration#add-on-config
 name: KNXD daemon
-version: "0.4.4"
+version: "0.4.5"
 slug: knxd
 description: KNXD daemon you can use to create a KNX/IP gateway via TPUART or USB bus adapters
 url: https://github.com/da-anda/hass-io-addons/tree/master/knxd

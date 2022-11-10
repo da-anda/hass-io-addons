@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.4.5
+
+- updated KNXD to version 0.14.56
+- updated docker base image to Alpine 3.16
+
 ## 0.4.4
 
 - added new experimental interfaces for tpuart-ip and ncn5120-ip
