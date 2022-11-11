@@ -1,4 +1,7 @@
 # Changelog
+## 0.4.6
+
+- downgraded docker base image to 3.14 until issues are resolved
 
 ## 0.4.5
 
