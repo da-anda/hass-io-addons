@@ -2,15 +2,15 @@ name: Builder
 
 env:
   BUILD_ARGS: "--test"
-  MONITORED_FILES: "build.yaml CHANGELOG.md Dockerfile rootfs"
+  MONITORED_FILES: "build.yaml config.yaml CHANGELOG.md Dockerfile rootfs"
 
 on:
   push:
     branches:
-      - master
+      - build
   pull_request:
     branches:
-      - master
+      - main
 
 jobs:
   init:
