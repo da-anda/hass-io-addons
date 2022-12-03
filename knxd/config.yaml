@@ -13,7 +13,6 @@ arch:
 init: false
 startup: services
 host_network: true
-apparmor: true
 privileged:
   - SYS_MODULE
   - SYS_RAWIO
