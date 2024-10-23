@@ -1,0 +1,54 @@
+{
+  "types": {
+    "build": {
+      "description": "Changes which affect the build system or external dependencies"
+    },
+    "chore": {
+      "description": "Changes which aren’t user-facing"
+    },
+    "ci": {
+      "description": "Changes which affect CI configuration files and scripts"
+    },
+    "docs": {
+      "description": "Changes which affect documentation"
+    },
+    "feat": {
+      "description": "Changes which introduce a new feature"
+    },
+    "fix": {
+      "description": "Changes which patch a bug"
+    },
+    "perf": {
+      "description": "Changes which improve performance"
+    },
+    "refactor": {
+      "description": "Changes which neither fix a bug nor add a feature"
+    },
+    "revert": {
+      "description": "Changes which revert a previous commit"
+    },
+    "security": {
+      "description": "Changes which improve security"
+    },
+    "style": {
+      "description": "Changes which don’t affect code logic, such as white-spaces, formatting"
+    },
+    "test": {
+      "description": "Changes which add missing tests or correct existing tests"
+    }
+  },
+  "footerTypes": [
+    {
+      "name": "BREAKING CHANGE",
+      "description": "The commit introduces breaking changes"
+    },
+    {
+      "name": "Closes",
+      "description": "The commit closes issues or pull requests"
+    },
+    {
+      "name": "Refs",
+      "description": "The commit references other commits by their hash ID.<br/>For multiple hash IDs use a comma as separator"
+    }
+  ]
+}
