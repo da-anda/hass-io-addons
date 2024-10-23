@@ -1,6 +1,6 @@
 # https://developers.home-assistant.io/docs/add-ons/configuration#add-on-config
 name: KNXD daemon
-version: "0.4.7"
+version: "0.5.0"
 slug: knxd
 description: KNXD daemon you can use to create a KNX/IP gateway via TPUART or USB bus adapters
 url: https://github.com/da-anda/hass-io-addons/tree/main/knxd
@@ -45,3 +45,4 @@ ports_description:
   "3671/udp": "Required by knx interface and being able to access the KNX bus via ETS"
 image: "ghcr.io/da-anda/hass-io-addons-{arch}-addon-knxd"
 uart: true
+usb: true

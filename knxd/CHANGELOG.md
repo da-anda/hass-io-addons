@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.5.0
+
+- bumped docker base image to 3.20
+- adjusted architecture to work with new s6overlay
+- updated KNXD to version 0.14.63 which should fix some issues with programming devices using ETS6
+
 ## 0.4.7
 
 - bumped docker base image to 3.16 again
