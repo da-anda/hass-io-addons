@@ -13,6 +13,7 @@ configuration:
       The driver knxd should use as interface to talk to the KNX bus. The most common ones for the typical usecase of this add-on are:
       tpuart (for UART based KNX interfaces, like the one from Busware.de)
       usb (for commercial USB KNX interfaces)
+      ipt (for connecting to existing IP tunneling interface)
   device:
     name: Device to use for connection
     description: >
@@ -31,7 +32,7 @@ configuration:
     description: Define the loglevel of knxd.
   ip_address:
     name: Interface IP-Address
-    description: IP address the IP based interface should use (only for tpuart-ip and ncn5120-ip)
+    description: IP address the IP based interface should use (only for tpuart-ip, ncn5120-ip and ipt)
   dest_port:
     name: Interface port
-    description: network port the IP based interface should use (only for tpuart-ip and ncn5120-ip)
+    description: network port the IP based interface should use (only for tpuart-ip, ncn5120-ip and ipt)

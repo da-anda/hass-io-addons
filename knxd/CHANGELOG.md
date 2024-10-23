@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.5.1
+
+- added support for the `ipt` interface
+
 ## 0.5.0
 
 - bumped docker base image to 3.20
@@ -21,7 +25,7 @@
 
 ## 0.4.4
 
-- added new experimental interfaces for tpuart-ip and ncn5120-ip
+- added new experimental interfaces for `tpuart-ip` and `ncn5120-ip`
 
 ## 0.4.3
 
@@ -29,12 +33,12 @@
 - removed "hassio_role": "admin"
 - bumped KNXD to 0.14.53
 - bumped base images to 3.14
-- add validators for address and client_address:
+- add validators for `address` and `client_address`:
 - add english descriptions for all parameters
 
 ## 0.4.2
 
-- fixed line breaks not being preserved in the resulting config file when using a custom_config
+- fixed line breaks not being preserved in the resulting config file when using a `custom_config`
 
 ## 0.4.1
 

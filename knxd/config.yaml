@@ -1,6 +1,6 @@
 # https://developers.home-assistant.io/docs/add-ons/configuration#add-on-config
 name: KNXD daemon
-version: "0.5.0"
+version: "0.5.1"
 slug: knxd
 description: KNXD daemon you can use to create a KNX/IP gateway via TPUART or USB bus adapters
 url: https://github.com/da-anda/hass-io-addons/tree/main/knxd
@@ -29,7 +29,7 @@ options:
 schema:
   address: "match(^\\d+\\.\\d+.\\d+$)"
   client_address: "match(^\\d+\\.\\d+.\\d+\\:\\d+$)"
-  interface: "list(tpuart|tpuart-ip|usb|ft12|ft12cemi|ncn5120|ncn5120-ip|dummy)"
+  interface: "list(tpuart|tpuart-ip|usb|ft12|ft12cemi|ncn5120|ncn5120-ip|ipt|dummy)"
   device: "device?"
   log_error_level: "list(warning|error|fatal|note|info|debug)"
   usb_filters: "str?"
