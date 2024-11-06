@@ -9,5 +9,5 @@ labels:
   org.opencontainers.image.description: "Home Assistant Add-on: KNXD daemon"
   org.opencontainers.image.source: "https://github.com/da-anda/hass-io-addons/tree/master/knxd"
 args:
-  KNXD_VERSION: 0.14.63
+  KNXD_VERSION: 0.14.66
   KNXD_REPO: https://github.com/knxd/knxd.git
