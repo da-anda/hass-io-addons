@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.5.2
+
+- updated the definition of the default value for the "device" config option so that the visual editor will also render this option as optional. 
+- bumped KNXD to version 0.14.66
+
 ## 0.5.1
 
 - added support for the `ipt` interface
