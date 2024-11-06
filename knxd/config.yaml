@@ -20,12 +20,9 @@ options:
   address: "0.0.1"
   client_address: "0.0.2:8"
   interface: usb
-  device: 
   log_error_level: warning
   usb_filters: single
-  ip_address: ""
   dest_port: "99"
-  custom_config: ""
 schema:
   address: "match(^\\d+\\.\\d+.\\d+$)"
   client_address: "match(^\\d+\\.\\d+.\\d+\\:\\d+$)"
