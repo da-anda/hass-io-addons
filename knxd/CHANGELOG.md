@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.6.0
+
+- updated KNXD to version 0.14.72
+- bumped docker base image to 3.21
+- added option to provide a custom `ini` file in the `addon_configs` directory
+
 ## 0.5.2
 
 - updated the definition of the default value for the "device" config option so that the visual editor will also render this option as optional. 
