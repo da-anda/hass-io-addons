@@ -57,11 +57,13 @@ Please note that the addresses are examples and might differ for your device. To
 
 When using an USB interface, you can specify additional filters to use. See the [filters section](https://github.com/knxd/knxd/blob/master/doc/inifile.rst#filters) of the official `knxd` documentation.
 
-#### Option: `custom_config` (optional)
+#### Option: `custom_config` (deprecated)
 
 Allows you to write your own, custom `knxd` ini configuration instead of using the prepared template from this add-on that makes use of all the other config options above.
 
 Your custom configuration will replace the default configuration provided by this add-on and thus all the other config options above will be ignored. See the [knxd documentation](https://github.com/knxd/knxd/blob/master/doc/inifile.rst) for all possible configuration options.
+
+Please note that this configuration option is deprecated as of version 0.6.0 of this add-on and will be removed in a future update. You are now able to provide a custom ini configuration file in the respective `addon_config` directory for this add-on. You can access this directory f.e. via a network share (SMB) if you have also installed the respective add-on for this.
 
 
 ## Support

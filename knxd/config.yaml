@@ -43,3 +43,6 @@ ports_description:
 image: "ghcr.io/da-anda/hass-io-addons-{arch}-addon-knxd"
 uart: true
 usb: true
+map:
+  - type: addon_config
+    read_only: false

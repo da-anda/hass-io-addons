@@ -23,8 +23,11 @@ configuration:
     name: usb_filters
     description: When using an USB interface, you can specify additional filters to use. See the filters[https://github.com/knxd/knxd/blob/master/doc/inifile.rst#filters] section of the official knxd documentation.
   custom_config:
-    name: Complete custom config
+    name: Complete custom config (deprecated)
     description: >
+      WARNING: This option is deprecated. Your custom configuration will automatically be migrated to the new location in the `addon_config` directory on the first start of this add-on.
+      Once migrated, changes to this configuration option will NO LONGER apply. You will have to make your changes in the file located in the `addon_config` folder of this add-on.
+      
       Allows you to write your own, custom knxd ini configuration instead of using the prepared template from this add-on that makes use of all the other config options above.
       Your custom configuration will replace the default configuration provided by this add-on and thus all the other config options above will be ignored. See the knxd documentation for all possible configuration options.
   log_error_level:
