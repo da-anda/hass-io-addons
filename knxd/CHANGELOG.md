@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.6.1
+
+- fixed validation of the add-on configuration to not require a defined `device` option for certain interface types (IP based interfaces as well as USB)
+
 ## 0.6.0
 
 - updated KNXD to version 0.14.72
